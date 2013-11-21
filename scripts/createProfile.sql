@@ -1,0 +1,1 @@
+create table profile (name char(10), id char(10));
