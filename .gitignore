@@ -1,0 +1,6 @@
+.gradle
+*.iws
+*.ipr
+*.class
+*.jar
+target
