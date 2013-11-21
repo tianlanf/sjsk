@@ -1,0 +1,6 @@
+<job id="abcJob" xmlns="http://www.springframework.org/schema/batch">
+    <step id="step1">
+        <tasklet ref="sendingEmailTasklet" />
+    </step>
+
+</job>

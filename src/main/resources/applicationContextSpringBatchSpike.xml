@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/batch
+                           http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <batch:job id="giveGreeting" job-repository="jobRepository">
+        <batch:step id="sayHello">
+            <batch:tasklet ref="sayHelloTasklet"/>
+        </batch:step>
+    </batch:job>
+
+    <bean id="sayHelloTasklet" class="com.thoughtworks.yafei.SayHelloTasklet"/>
+
+    <bean id="jobRepository" class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean"/>
+
+    <bean id="taskExecutor" class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+
+    <bean id="transactionManager2" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
+
+</beans>
